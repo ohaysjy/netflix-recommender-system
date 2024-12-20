@@ -1,4 +1,6 @@
-## Netflix Recommender System by using Content-based Filtering to help new users discover movies effectively 
+# Netflix Recommender System
+
+## Introduction
 
 ![My Project Logo](/images/Netflix_logo.png)
 
@@ -13,6 +15,26 @@ Over the years, Netflix has developed additional algorithms, such as Category In
 
 Despite these efforts, Netflix continues to struggle with viewership ratings, and users often find it difficult to discover new content that aligns with their ever-changing tastes and preferences. 
 <br>
+
+## Problem Statement 
+> "Netflix Recommender System by using Content-based Filtering to help new users discover movies effectively"
+
+## Datasets 
+
+There are two files: <br> 
+- tmdb_5000_credits.csv: 4 Columns by 4,803 Rows (Consists of Movie ID, Title, Cast and Crew)
+- tmdb_5000_movies.csv: 20 Columns by 4,803 Rows (Consists of Movie ID, Title, Genre, Language, Popularity, Revenue, Vote Average, Vote Count, Overview, etc)
+
+## Data Cleaning 
+1. Merged two datasets using the common identifier 'Movie ID.'  
+2. Extracted and reformatted a list of dictionaries for columns such as Genre, Production Companies, Cast, and Keywords.  
+3. Reformatted language columns to change abbreviations to full terms.  
+4. Checked for null and duplicate values.  
+5. Imputed 'Unknown' for Home Page, Tag Line, Overview, and Run Time where applicable.  
+6. Removed duplicate Movie Titles.  
+7. Created a new data frame to contain all essential columns for analysis and modeling.
+
+## Predictive Modelling 
 
 ![Content-based Filtering](/images/CBF.png) 
 
@@ -126,3 +148,20 @@ By comparing the movies recommended after watching The Dark Knight Rises based o
 By utilizing additional features, it becomes clear that both the diversity and novelty of the recommended movies vary significantly based on the movie watched. However, this should be studied in more detail, and a greater understanding of user data and preferences is needed to provide more tailored and personalized movie recommendations for each individual. <br>
 
 To enhance the accuracy of predictive modeling, techniques such as word embedding (using synonyms or words with similar meanings) and collaborative filtering should be considered, especially when the dataset is larger and includes extensive user data based on multiple or hundreds of watched movies. <br>
+
+## Limitations 
+1. **No Data Accessibility** <br>
+Netflix has stopped providing API access to public users since 2017. As a result, the data I need, which should include multiple watched movies per user, is difficult to obtain. <br>
+
+2. **Outdated Data** <br>
+The data is quite old, with the last movie entry being from February 2017. <br>
+
+3. **Computational Limitations** <br>
+Large computational tasks, such as creating a mapping matrix, are not feasible due to the limited processing power of my laptop. <br>
+
+## Recommendations 
+1. **Word Embedding** <br>
+This technique utilizes synonyms or words with similar meanings. <br>
+
+2. **Collaborative Filtering** <br>
+Since the current model is only based on content relevant to new users, it requires just one input, the 'Movie ID.' However, to enhance the model's accuracy, collaborative filtering is recommended. This approach incorporates user data, allowing for more accurate movie recommendations based on similar types or user interests. <br>
